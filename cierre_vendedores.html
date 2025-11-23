@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Negocios - Rueda 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { background-color: #f0f2f5; }
+        
+        /* CONTENIDO BLOQUEADO INICIALMENTE (CANDADO) */
+        #contenido-principal {
+            filter: blur(10px);
+            pointer-events: none;
+            transition: all 0.5s ease;
+        }
+
+        .negocios-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .step-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+        .step-active {
+            background-color: #fff;
+            border-left: 5px solid var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        /* BLOQUEO VISUAL (Nombre y País) */
+        .locked-field {
+            background-color: #e9ecef !important;
+            color: #666 !important;
+            pointer-events: none;
+            border-color: #ccc !important;
+            cursor: not-allowed;
+            opacity: 0.8;
+        }
+
+        .step-header {
+            font-family: 'Montserrat';
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .total-display {
+            background-color: #e3f2fd;
+            color: var(--primary-blue);
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-family: 'Montserrat';
+        }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <div id="modal-acceso" class="modal-overlay" style="visibility: visible; opacity: 1; z-index: 9999; background: rgba(5, 30, 71, 0.95);">
+        <div class="modal-content" style="text-align: center; max-width: 400px;">
+            <div style="font-size: 4rem; color: var(--primary-blue); margin-bottom: 15px;">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <h2 style="color: var(--dark-blue); margin-bottom: 10px;">Acceso Restringido</h2>
+            <p style="color: #666; margin-bottom: 20px;">Esta sección es exclusiva para registrar transacciones. Ingresa la contraseña.</p>
+            
+            <input type="password" id="input-clave" placeholder="Contraseña" style="width: 100%; padding: 12px; border: 2px solid #ccc; border-radius: 8px; font-size: 1.1rem; text-align: center; margin-bottom: 15px;">
+            
+            <button onclick="verificarClave()" class="btn btn-primary" style="width: 100%; cursor: pointer;">Ingresar</button>
+            <p id="mensaje-error" style="color: red; display: none; margin-top: 10px; font-weight: bold;">Contraseña incorrecta</p>
+            
+            <br><br>
+            <a href="index.html" style="color: #999; text-decoration: none; font-size: 0.9rem;">Volver al inicio</a>
+        </div>
+    </div>
+
+    <div id="contenido-principal">
+        <div class="container negocios-container">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h2 style="color: var(--primary-red); font-family: 'Montserrat';">Registro de Transacciones</h2>
+                <p>Gestiona tus compras y ventas de manera ágil.</p>
+            </div>
+
+            <form id="form-transaccion" action="LINK_SHEETMONKEY_TRANSACCIONES_AQUI" method="POST">
+                
+                <div id="step-1" class="step-section step-active">
+                    <div class="step-header">
+                        <i class="fa-solid fa-user-tag"></i> 
+                        <span id="titulo-paso1">1. Identidad (Se llena una sola vez)</span>
+                    </div>
+                    
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Nombre del Participante</label>
+                            <input type="text" id="participante" name="participante" placeholder="Tu nombre completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>País que representas</label>
+                            <select id="pais" name="pais" required>
+                                <option value="">Selecciona...</option>
+                                <option value="Argentina">Argentina 🇦🇷</option>
+                                <option value="Brasil">Brasil 🇧🇷</option>
+                                <option value="Canadá">Canadá 🇨🇦</option>
+                                <option value="China">China 🇨🇳</option>
+                                <option value="Colombia">Colombia 🇨🇴</option>
+                                <option value="Chile">Chile 🇨🇱</option>
+                                <option value="EE.UU.">EE.UU. 🇺🇸</option>
+                                <option value="España">España 🇪🇸</option>
+                                <option value="Francia">Francia 🇫🇷</option>
+                                <option value="Italia">Italia 🇮🇹</option>
+                                <option value="Japón">Japón 🇯🇵</option>
+                                <option value="México">México 🇲🇽</option>
+                                <option value="Perú">Perú 🇵🇪</option>
+                                <option value="Portugal">Portugal 🇵🇹</option>
+                                <option value="Puerto Rico">Puerto Rico 🇵🇷</option>
+                                <option value="Tailandia">Tailandia 🇹🇭</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="button" id="btn-iniciar-sesion" class="btn btn-primary" style="width: 100%; margin-top: 15px;">
+                        INICIAR SESIÓN Y BLOQUEAR DATOS
+                    </button>
+                </div>
+
+                <div id="step-2" class="step-section hidden">
+                    <div class="step-header"><i class="fa-solid fa-cart-shopping"></i> 2. Nueva Transacción</div>
+                    
+                    <div class="form-grid">
+                        
+                        <div class="form-group full-width">
+                            <label style="color: var(--primary-red);">Rol en esta transacción específica</label>
+                            <select id="rol" name="rol" required style="border-color: var(--primary-red);">
+                                <option value="">¿Qué estás haciendo ahora?</option>
+                                <option value="Vendedor">Vendedor (Estoy Ofreciendo)</option>
+                                <option value="Comprador">Comprador (Estoy Demandando)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Sector / Categoría</label>
+                            <select id="categoria" name="categoria" onchange="cargarProductos()">
+                                <option value="">Selecciona Sector...</option>
+                                <option value="Agroindustria">Agroindustria y Alimentos</option>
+                                <option value="MineriaEnergia">Minería y Energía</option>
+                                <option value="Tecnologia">Tecnología y Software</option>
+                                <option value="Manufactura">Manufactura e Industria</option>
+                                <option value="Recursos">Recursos Naturales y Otros</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Producto Específico</label>
+                            <select id="producto" name="producto" required disabled>
+                                <option value="">Primero elige categoría...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Cantidad</label>
+                            <input type="number" id="cantidad" name="cantidad" placeholder="0" min="1" oninput="calcularTotal()" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Precio Unitario (USD)</label>
+                            <input type="number" id="precio" name="precio_unitario" placeholder="$ 0.00" min="0" step="0.01" oninput="calcularTotal()" required>
+                        </div>
+                    </div>
+
+                    <div class="total-display">
+                        Total: USD <span id="total-display">0.00</span>
+                        <input type="hidden" id="total_usd" name="total_usd">
+                    </div>
+
+                    <div style="display: flex; gap: 10px; margin-top: 20px;">
+                        <button type="submit" class="btn btn-submit" style="flex: 2; background-color: #2e7d32; color: white; border: none; border-radius: 50px; padding: 15px; font-weight: bold; cursor: pointer;">REGISTRAR ESTA TRANSACCIÓN</button>
+                    </div>
+                </div>
+            </form>
+
+            <div id="finalizar-container" class="hidden" style="text-align: center; margin-top: 30px; border-top: 2px dashed #ccc; padding-top: 20px;">
+                <p style="color: #666;">¿Ya terminaste de registrar todos tus negocios?</p>
+                <button onclick="abrirConfirmacionSalida()" class="btn btn-outline" style="color: #C62828; border-color: #C62828;">
+                    <i class="fa-solid fa-power-off"></i> Cerrar Sesión y Salir
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="modal-exito" class="modal-overlay" style="z-index: 5000;">
+        <div class="modal-content" style="text-align: center; max-width: 400px;">
+            <div style="font-size: 5rem; color: var(--success-green); margin-bottom: 15px;">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2 style="color: var(--dark-blue); margin-bottom: 10px;">¡Transacción Exitosa!</h2>
+            <p style="color: #666; margin-bottom: 25px;">El negocio ha sido registrado correctamente.</p>
+            <button class="btn btn-primary" onclick="cerrarModalExito()" style="width: 100%; cursor: pointer; background-color: #2e7d32;">
+                <i class="fa-solid fa-cart-plus"></i> Registrar otra venta
+            </button>
+        </div>
+    </div>
+
+    <div id="modal-confirmacion" class="modal-overlay" style="z-index: 6000;">
+        <div class="modal-content" style="text-align: center; max-width: 400px;">
+            <div style="font-size: 4rem; color: #ff9800; margin-bottom: 15px;">
+                <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+            <h2 style="color: var(--dark-blue); margin-bottom: 10px;">¿Cerrar Sesión?</h2>
+            <p style="color: #666; margin-bottom: 25px;">Si sales ahora, tendrás que volver a ingresar tu nombre y país para registrar nuevas ventas.</p>
+            
+            <div style="display: flex; gap: 10px; justify-content: center;">
+                <button class="btn btn-outline" onclick="cerrarModalConfirmacion()" style="border-color: #999; color: #666;">Cancelar</button>
+                <button class="btn btn-primary" onclick="confirmarSalidaReal()" style="background-color: var(--primary-red); border-color: var(--primary-red);">Sí, salir</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- SEGURIDAD: CONTRASEÑA ---
+        const CLAVE_CORRECTA = "Ru3d@2025"; // <--- CONTRASEÑA
+        const modalAcceso = document.getElementById('modal-acceso');
+        const contenidoPrincipal = document.getElementById('contenido-principal');
+        const inputClave = document.getElementById('input-clave');
+        const mensajeError = document.getElementById('mensaje-error');
+
+        function verificarClave() {
+            if (inputClave.value === CLAVE_CORRECTA) {
+                modalAcceso.style.opacity = '0';
+                setTimeout(() => {
+                    modalAcceso.style.visibility = 'hidden';
+                    contenidoPrincipal.style.filter = 'none';
+                    contenidoPrincipal.style.pointerEvents = 'auto';
+                }, 300);
+            } else {
+                mensajeError.style.display = 'block';
+                inputClave.style.borderColor = 'red';
+            }
+        }
+
+        inputClave.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') verificarClave();
+        });
+
+        // --- CATÁLOGO ---
+        const catalogo = {
+            "Agroindustria": ["Café Arábica Premium", "Carne bovina premium", "Vino Malbec", "Vino Carménete Reserva", "Vino de Oporto", "Vino Bordeaux", "Vino Chianti DOCG", "Sake premium", "Tequila Añejo", "Ron Premium", "Aguacate Hass", "Soja", "Trigo Canadiense", "Jarabe de Arce Grado A", "Azúcar VHP", "Salmón Atlántico", "Maíz transgénico", "Aceite Oliva Virgen Extra", "Jamón Ibérico de Bellota", "Quesos AOP", "Pasta de trigo duro", "Espárragos frescos", "Pisco", "Piña fresca", "Arroz jazmín"],
+            "MineriaEnergia": ["Mineral de Hierro (65% Fe)", "Cobre Grado A", "Cobre concentrado", "Cobre refinado", "Acero inoxidable", "Litio para baterías", "Gas natural", "Gas natural licuado", "Combustible y crudo", "Uranio enriquecido", "Equipos de energía renovable", "Paneles solares", "Equipos de energía eólica marina"],
+            "Tecnologia": ["Software SaaS (licencia anual)", "Software de gestión empresarial", "Sistemas de inteligencia artificial", "Plataformas de e-commerce", "Tecnología minera 4.0", "Tecnología agrícola de precisión", "Sistemas de riego tecnificado", "Sistemas de riego inteligente", "Drones agrícolas", "Robots industriales", "Semiconductores", "Componentes electrónicos"],
+            "Manufactura": ["Automóviles híbridos", "Autos Compactos", "Vehículos eléctricos", "Aviones Boeing", "Maquinaria agrícola (tractores)", "Maquinaria minera", "Maquinaria industrial", "Maquinaria automotriz", "Equipos médicos especializados", "Equipos médicos avanzados", "Textiles técnicos", "Moda de lujo", "Perfumes de lujo", "Juguetes educativos"],
+            "Recursos": ["Madera Certificada", "Caucho natural", "Corcho natural", "Mármol para construcción", "Materiales de construcción", "Fertilizantes especializados", "Servicios Turísticos Premium"]
+        };
+
+        const btnIniciar = document.getElementById('btn-iniciar-sesion');
+        const step1 = document.getElementById('step-1');
+        const step2 = document.getElementById('step-2');
+        const finContainer = document.getElementById('finalizar-container');
+        const inputNombre = document.getElementById('participante');
+        const inputPais = document.getElementById('pais'); 
+        const modalExito = document.getElementById('modal-exito');
+        const modalConfirmacion = document.getElementById('modal-confirmacion');
+
+        // 1. LÓGICA DE SESIÓN
+        btnIniciar.addEventListener('click', () => {
+            const nombre = inputNombre.value;
+            const pais = inputPais.value;
+
+            if(nombre && pais) {
+                inputNombre.readOnly = true;
+                inputNombre.classList.add('locked-field'); 
+                
+                inputPais.classList.add('locked-field');
+                
+                btnIniciar.style.display = 'none';
+                
+                document.getElementById('titulo-paso1').innerHTML = "1. Identidad (Sesión Activa ✅)";
+                document.getElementById('titulo-paso1').style.color = "var(--success-green)";
+
+                step2.classList.remove('hidden');
+                finContainer.classList.remove('hidden');
+                step2.scrollIntoView({behavior: "smooth"});
+            } else {
+                alert("Por favor completa Nombre y País para iniciar.");
+            }
+        });
+
+        // 2. CARGA DINÁMICA
+        function cargarProductos() {
+            const categoria = document.getElementById("categoria").value;
+            const selectProducto = document.getElementById("producto");
+            selectProducto.innerHTML = '<option value="">Selecciona un producto...</option>';
+            selectProducto.disabled = true;
+            if (categoria && catalogo[categoria]) {
+                selectProducto.disabled = false;
+                catalogo[categoria].forEach(prod => {
+                    const option = document.createElement("option");
+                    option.value = prod;
+                    option.text = prod;
+                    selectProducto.appendChild(option);
+                });
+            }
+        }
+
+        // 3. CALCULAR
+        function calcularTotal() {
+            const cant = parseFloat(document.getElementById('cantidad').value) || 0;
+            const precio = parseFloat(document.getElementById('precio').value) || 0;
+            const total = cant * precio;
+            document.getElementById('total-display').innerText = total.toLocaleString('en-US', {minimumFractionDigits: 2});
+            document.getElementById('total_usd').value = total;
+        }
+
+        // 4. GESTIÓN MODALES
+        function cerrarModalExito() {
+            modalExito.style.visibility = 'hidden';
+            modalExito.style.opacity = '0';
+        }
+
+        function abrirConfirmacionSalida() {
+            modalConfirmacion.style.visibility = 'visible';
+            modalConfirmacion.style.opacity = '1';
+        }
+
+        function cerrarModalConfirmacion() {
+            modalConfirmacion.style.visibility = 'hidden';
+            modalConfirmacion.style.opacity = '0';
+        }
+
+        function confirmarSalidaReal() {
+            window.location.href = 'index.html';
+        }
+
+        // 5. ENVÍO
+        const form = document.getElementById('form-transaccion');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = form.querySelector('.btn-submit');
+            const originalText = btn.innerText;
+            btn.innerText = "Guardando...";
+            btn.disabled = true;
+
+            const data = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    modalExito.style.visibility = 'visible';
+                    modalExito.style.opacity = '1';
+                    
+                    // LIMPIAR SOLO PASO 2 (Rol, Categoría, Producto, Precios)
+                    document.getElementById('rol').value = ""; 
+                    document.getElementById('categoria').value = "";
+                    document.getElementById('producto').innerHTML = '<option value="">Primero elige categoría...</option>';
+                    document.getElementById('producto').disabled = true;
+                    document.getElementById('cantidad').value = "";
+                    document.getElementById('precio').value = "";
+                    document.getElementById('total-display').innerText = "0.00";
+                    
+                    document.getElementById('step-2').scrollIntoView({behavior: "smooth"});
+
+                } else {
+                    alert("Error al guardar.");
+                }
+            }).catch(error => alert("Error de conexión")).finally(() => {
+                btn.innerText = originalText;
+                btn.disabled = false;
+            });
+        });
+    </script>
+
+</body>
+</html>

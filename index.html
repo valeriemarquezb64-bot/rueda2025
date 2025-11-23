@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rueda de Negocios Cultural y Gastronómica 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fa-solid fa-globe"></i> Rueda<span>2025</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#inicio">Inicio</a>
+                <a href="#paises">Países</a>
+                <a href="#agenda">Agenda</a>
+                <a href="#registro" class="btn-nav">Registrarse</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="tagline">25 DE NOVIEMBRE | ENCUENTRO DE 16 NACIONES</span>
+            <h1>RUEDA DE NEGOCIOS <br> <span class="highlight">GLOBAL 2025</span></h1>
+            <p>Conecta oferta y demanda: Desde tecnología agrícola hasta gastronomía premium.</p>
+            <div class="hero-buttons">
+                <a href="#paises" class="btn btn-primary">Explorar Mercado</a>
+                <a href="#agenda" class="btn btn-outline">Ver Horarios</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="paises" class="section-paises">
+        <div class="container">
+            <div class="section-title">
+                <h2>Países Participantes</h2>
+                <div class="divider"></div>
+                <p>Selecciona un país para ver su Matriz de Oferta y Demanda.</p>
+            </div>
+
+            <div class="grid-paises">
+                <div class="card"><div class="card-img" style="background-image: url('img/argentina.jpg');"><span class="badge">Agroindustria</span></div><div class="card-body"><h3>Argentina 🇦🇷</h3><p class="highlight-text">Top Oferta: Carne Bovina Premium</p><a href="#modal-argentina" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1483729558449-99ef09a8c325?q=80&w=800&auto=format&fit=crop');"><span class="badge">Minería, Agroindustria</span></div><div class="card-body"><h3>Brasil 🇧🇷</h3><p class="highlight-text">Top Oferta: Mineral de Hierro</p><a href="#modal-brasil" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1517935706615-2717063c2225?q=80&w=800&auto=format&fit=crop');"><span class="badge">Agroindustria, Energía, Forestal</span></div><div class="card-body"><h3>Canadá 🇨🇦</h3><p class="highlight-text">Top Oferta: Trigo y Madera</p><a href="#modal-canada" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=800&auto=format&fit=crop');"><span class="badge">Tecnología, Industria pesada</span></div><div class="card-body"><h3>China 🇨🇳</h3><p class="highlight-text">Top Oferta: Electrónicos y Acero</p><a href="#modal-china" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('img/colombia.jpg');"><span class="badge">Agroindustria</span></div><div class="card-body"><h3>Colombia 🇨🇴</h3><p class="highlight-text">Top Oferta: Café Arábica y Flores</p><a href="#modal-colombia" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('img/chile.jpg');"><span class="badge">Minería, Agroindustria, Vinos</span></div><div class="card-body"><h3>Chile 🇨🇱</h3><p class="highlight-text">Top Oferta: Cobre Grado A</p><a href="#modal-chile" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('img/usa.jpg');"><span class="badge">Tecnología, Agroindustria, Aeroespacial</span></div><div class="card-body"><h3>EE.UU. 🇺🇸</h3><p class="highlight-text">Top Oferta: Software SaaS</p><a href="#modal-usa" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('img/espana.jpg');"><span class="badge">Agroindustria, Gastronomía, Turismo</span></div><div class="card-body"><h3>España 🇪🇸</h3><p class="highlight-text">Top Oferta: Aceite de Oliva y Jamón</p><a href="#modal-espana" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=800&auto=format&fit=crop');"><span class="badge">Vinos, Lujo, Lácteos</span></div><div class="card-body"><h3>Francia 🇫🇷</h3><p class="highlight-text">Top Oferta: Vino Bordeaux y Perfumes</p><a href="#modal-francia" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?q=80&w=800&auto=format&fit=crop');"><span class="badge">Gastronomía, Moda</span></div><div class="card-body"><h3>Italia 🇮🇹</h3><p class="highlight-text">Top Oferta: Pasta, Vino y Moda</p><a href="#modal-italia" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('img/japon.jpg');"><span class="badge">Automotriz, Robótica, Bebidas</span></div><div class="card-body"><h3>Japón 🇯🇵</h3><p class="highlight-text">Top Oferta: Autos Híbridos y Robots</p><a href="#modal-japon" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?q=80&w=800&auto=format&fit=crop');"><span class="badge">Agroindustria, Automotriz, Bebidas</span></div><div class="card-body"><h3>México 🇲🇽</h3><p class="highlight-text">Top Oferta: Aguacate y Tequila</p><a href="#modal-mexico" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('img/peru.jpg');"><span class="badge">Agroindustria, Minería, Bebidas</span></div><div class="card-body"><h3>Perú 🇵🇪</h3><p class="highlight-text">Top Oferta: Espárragos y Cobre</p><a href="#modal-peru" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('img/portugal.jpg');"><span class="badge">Vinos, Corcho, Aceite</span></div><div class="card-body"><h3>Portugal 🇵🇹</h3><p class="highlight-text">Top Oferta: Vino de Oporto y Corcho</p><a href="#modal-portugal" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('img/puertorico.jpg');"><span class="badge">Bebidas, Agroindustria</span></div><div class="card-body"><h3>Puerto Rico 🇵🇷</h3><p class="highlight-text">Top Oferta: Ron Premium y Café</p><a href="#modal-pr" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+                <div class="card"><div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?q=80&w=800&auto=format&fit=crop');"><span class="badge">Agroindustria, Caucho, Electrónica</span></div><div class="card-body"><h3>Tailandia 🇹🇭</h3><p class="highlight-text">Top Oferta: Arroz Jazmín y Caucho</p><a href="#modal-tailandia" class="btn-card">Ver Oportunidades <i class="fa-solid fa-arrow-right"></i></a></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="agenda" class="section-agenda">
+        <div class="container">
+            <div class="section-title">
+                <h2>Agenda del Evento</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="agenda-card">
+                <div class="agenda-header-info">
+                    <h2>Rueda de Negocios Cultural</h2>
+                    <div class="agenda-meta">
+                        <span><i class="fa-regular fa-calendar-days"></i> 25 de noviembre</span>
+                        <span><i class="fa-regular fa-clock"></i> 6:00 p.m. – 9:30 p.m.</span>
+                        <span><i class="fa-solid fa-location-dot"></i> Sede A – Barrio España</span>
+                    </div>
+                </div>
+                <div class="agenda-body">
+                    <div class="agenda-item"><div class="agenda-time">6:00 – 6:30 p.m.</div><div class="agenda-desc"><h3>Apertura y bienvenida</h3><p>Inicio oficial del evento.</p></div></div>
+                    <div class="agenda-item"><div class="agenda-time">6:30 – 7:00 p.m.</div><div class="agenda-desc"><h3>Preparación y networking</h3><p>Instalación de mesas y primer contacto.</p></div></div>
+                    <div class="agenda-item"><div class="agenda-time">7:00 – 8:30 p.m.</div><div class="agenda-desc"><h3>Actividades culturales y gastronómicas</h3><p>Muestra comercial, degustaciones y negociaciones.</p></div></div>
+                    <div class="agenda-item"><div class="agenda-time">8:30 – 9:30 p.m.</div><div class="agenda-desc"><h3>Cierre y reconocimientos</h3><p>Clausura del evento y agradecimientos.</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registro" class="section-registro">
+        <div class="container">
+            <div class="registro-card">
+                <div class="registro-header">
+                    <h2>Registro de Asistencia</h2>
+                    <p>Asegura tu lugar en la Rueda de Negocios 2025.</p>
+                </div>
+                
+                <form id="form-registro" action="https://api.sheetmonkey.io/form/22Zajf83zpL2y8a65FHJ72" method="POST" class="registro-form">
+                    <div class="form-grid">
+                        <div class="form-group full-width">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono / WhatsApp</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="+57 300 000 0000" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="pais">País que representa</label>
+                            <select id="pais" name="pais" required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="Ninguno">Ninguno (Soy Jurado/Visitante/Invitado)</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Canadá">Canadá</option>
+                                <option value="China">China</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Chile">Chile</option>
+                                <option value="EE.UU.">EE.UU.</option>
+                                <option value="España">España</option>
+                                <option value="Francia">Francia</option>
+                                <option value="Italia">Italia</option>
+                                <option value="Japón">Japón</option>
+                                <option value="México">México</option>
+                                <option value="Perú">Perú</option>
+                                <option value="Portugal">Portugal</option>
+                                <option value="Puerto Rico">Puerto Rico</option>
+                                <option value="Tailandia">Tailandia</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interes">Rol en el Evento</label>
+                            <select id="interes" name="interes" required>
+                                <option value="" disabled selected>Selecciona tu rol</option>
+                                <option value="vendedor">Vendedor / Comprador</option>
+				<option value="expositor">Expositor / Participante</option>
+                                <option value="jurado">Jurado / Evaluador</option>
+                                <option value="visitante">Visitante / Invitado</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-submit">CONFIRMAR ASISTENCIA</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>Rueda de Negocios 2025</h4>
+                <p>Facilitando el comercio global entre 16 naciones aliadas.</p>
+		<p>Desarrollado por Intellingence Business Advisors HMKez®.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+		<p><i class="fas fa-address-book"></i> Humberto Marquez Peñaloza</strong></p>
+		<p><i class="fa-solid fa-envelope"></i> hmarquezp@tecnocomfenalco.edu.co</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Rueda de Negocios Cultural. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=573218967058&text=Hola,%20me%20interesa%20la%20Rueda%20de%20Negocios" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <div id="modal-exito" class="modal-overlay" style="z-index: 4000;">
+        <div class="modal-content" style="text-align: center; max-width: 450px;">
+            <div style="font-size: 5rem; color: var(--success-green); margin-bottom: 15px;">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2 style="color: var(--dark-blue); margin-bottom: 10px;">¡Registro Exitoso!</h2>
+            <p style="color: #666; margin-bottom: 20px;">Tus datos han sido guardados correctamente.</p>
+            
+            <div id="btn-acceso-vendedor" style="display: none;">
+                <p style="font-weight: bold; color: var(--primary-blue);">Acceso Exclusivo para Negocios:</p>
+                <a href="cierre_vendedores.html" class="btn btn-primary" style="width: 100%; margin-bottom: 10px; display: block; text-decoration: none; line-height: 1.6;">
+                    <i class="fa-solid fa-file-invoice-dollar"></i> Reportar Ventas / Negocios
+                </a>
+            </div>
+
+            <div id="btn-acceso-jurado" style="display: none;">
+                <p style="font-weight: bold; color: var(--primary-blue);">Acceso Exclusivo para Jurados:</p>
+                <a href="evaluacion_jurados.html" class="btn btn-primary" style="width: 100%; margin-bottom: 10px; display: block; text-decoration: none; line-height: 1.6; background-color: #e65100; border-color: #e65100;">
+                    <i class="fa-solid fa-star"></i> Realizar Evaluación
+                </a>
+            </div>
+
+            <button class="btn btn-outline" onclick="cerrarModalExito()" style="width: 100%; cursor: pointer; border-color: #ddd; color: #666; margin-top: 10px;">
+                Cerrar y Volver
+            </button>
+        </div>
+    </div>
+
+    <div id="modal-argentina" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇦🇷 Argentina: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Carne bovina premium:</strong> 48M kg ($7.25/kg).</li><li><strong>Vino Malbec:</strong> 28M botellas.</li><li><strong>Soja:</strong> 95M ton.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Tecnología agrícola:</strong> 2,150 sistemas.</li><li><strong>Energía renovable:</strong> 1,850 unidades.</li><li><strong>Software gestión:</strong> 85 licencias.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-brasil" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇧🇷 Brasil: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Mineral de Hierro:</strong> 9.2M ton.</li><li><strong>Carne Bovina Angus:</strong> 4.5M kg.</li><li><strong>Azúcar VHP:</strong> 7.5M ton.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Vehículos eléctricos:</strong> 28,000 unidades.</li><li><strong>Refrigeración industrial:</strong> 750 sistemas.</li><li><strong>Plataformas e-commerce:</strong> 15 sistemas.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-canada" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇨🇦 Canadá: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Trigo Canadiense:</strong> 48M ton.</li><li><strong>Jarabe de Arce:</strong> 4.8M litros.</li><li><strong>Madera Certificada:</strong> 18.5M ton.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Inteligencia Artificial:</strong> 10,000 licencias.</li><li><strong>Vehículos eléctricos:</strong> 22,000 unidades.</li><li><strong>Equipos médicos:</strong> 1,200 unidades.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-china" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇨🇳 China: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Electrónicos:</strong> 480M unidades.</li><li><strong>Acero inoxidable:</strong> 950M ton.</li><li><strong>Juguetes educativos:</strong> 9.5M cajas.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Soja:</strong> 38M ton.</li><li><strong>Cobre refinado:</strong> 1.8M ton.</li><li><strong>Componentes de lujo:</strong> Paquete de $2.1B.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-colombia" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇨🇴 Colombia: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Café Arábica:</strong> 480k sacos.</li><li><strong>Aguacate Hass:</strong> 180k cajas.</li><li><strong>Flores exóticas:</strong> 950k ramos.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Maquinaria agrícola:</strong> 900 tractores.</li><li><strong>Riego tecnificado:</strong> 350 sistemas.</li><li><strong>Fertilizantes:</strong> 12,000 ton.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-chile" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇨🇱 Chile: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Cobre Grado A:</strong> 4.8M ton.</li><li><strong>Salmón Atlántico:</strong> 95k kg.</li><li><strong>Vino Carmenere:</strong> 850k cajas.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Tecnología minera 4.0:</strong> 1,200 unidades.</li><li><strong>Acuicultura:</strong> 600 sistemas.</li><li><strong>Drones agrícolas:</strong> 850 unidades.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-usa" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇺🇸 EE.UU.: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Software SaaS:</strong> 180M licencias.</li><li><strong>Maíz transgénico:</strong> 480M ton.</li><li><strong>Aviones Boeing:</strong> 950 unidades.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Aguacates:</strong> 48,000 ton.</li><li><strong>Café especial:</strong> 185,000 ton.</li><li><strong>Textiles técnicos:</strong> 3.5M unidades.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-espana" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇪🇸 España: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Aceite Oliva Virgen:</strong> 9.5M litros.</li><li><strong>Jamón Ibérico:</strong> 950k kg.</li><li><strong>Turismo Premium:</strong> 480k paquetes.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Gas natural:</strong> 200M m³.</li><li><strong>Riego inteligente:</strong> 1,500 sistemas.</li><li><strong>Electrónica:</strong> 4.5M unidades.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-francia" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇫🇷 Francia: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Vino Bordeaux:</strong> 48M botellas.</li><li><strong>Perfumes lujo:</strong> 18M frascos.</li><li><strong>Quesos AOP:</strong> 9.5M kg.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Semiconductores:</strong> 18M unidades.</li><li><strong>Uranio enriquecido:</strong> 1,200 kg.</li><li><strong>Componentes moda:</strong> $350M.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-italia" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇮🇹 Italia: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Pasta trigo duro:</strong> 48M kg.</li><li><strong>Vino Chianti:</strong> 18M botellas.</li><li><strong>Moda de lujo:</strong> 950k prendas.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Gas natural:</strong> 6.5B m³.</li><li><strong>Semiconductores:</strong> 22M unidades.</li><li><strong>Mármol:</strong> 850k ton.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-japon" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇯🇵 Japón: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Autos híbridos:</strong> 4.8M unidades.</li><li><strong>Robots industriales:</strong> 950k unidades.</li><li><strong>Sake premium:</strong> 480k botellas.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Litio baterías:</strong> 3,200 ton.</li><li><strong>Gas natural licuado:</strong> 5.8M ton.</li><li><strong>Carne cerdo:</strong> 180k ton.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-mexico" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇲🇽 México: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Aguacate Hass:</strong> 1.1M kg.</li><li><strong>Tequila Añejo:</strong> 750k botellas.</li><li><strong>Autos Compactos:</strong> 280k unidades.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Paneles solares:</strong> 85,000 unidades.</li><li><strong>Semiconductores:</strong> 8.5M unidades.</li><li><strong>Maquinaria auto:</strong> 1,500 unidades.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-peru" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇵🇪 Perú: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Espárragos frescos:</strong> 95k kg.</li><li><strong>Cobre concentrado:</strong> 2.8M ton.</li><li><strong>Pisco:</strong> 480k botellas.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Maquinaria minera:</strong> 950 unidades.</li><li><strong>Tecnología pesquera:</strong> 650 sistemas.</li><li><strong>Equipos textiles:</strong> 1,200 máquinas.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-portugal" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇵🇹 Portugal: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Vino de Oporto:</strong> 18M botellas.</li><li><strong>Corcho natural:</strong> 95k ton.</li><li><strong>Aceite de oliva:</strong> 4.8M litros.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Gas natural:</strong> 1.2B m³.</li><li><strong>Energía eólica:</strong> 180 turbinas.</li><li><strong>Componentes elec:</strong> 2.5M unidades.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-pr" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇵🇷 Puerto Rico: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Ron Premium:</strong> 850k botellas.</li><li><strong>Café Gourmet:</strong> 95k sacos.</li><li><strong>Piña fresca:</strong> 450k cajas.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Equipos médicos:</strong> 450 unidades.</li><li><strong>Energía renovable:</strong> 120 MW.</li><li><strong>Mat. construcción:</strong> 85k ton.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+    <div id="modal-tailandia" class="modal-overlay"><div class="modal-content"><a href="#paises" class="modal-close">&times;</a><div class="modal-header"><h2>🇹🇭 Tailandia: Matriz Comercial</h2></div><div class="modal-body"><div class="offer-section"><h4><i class="fa-solid fa-box-open"></i> OFERTA (Venden)</h4><ul><li><strong>Arroz jazmín:</strong> 9.5M ton.</li><li><strong>Caucho natural:</strong> 4.8M ton.</li><li><strong>Electrónicos:</strong> 18M cajas.</li></ul></div><div class="demand-section"><h4><i class="fa-solid fa-cart-shopping"></i> DEMANDA (Compran)</h4><ul><li><strong>Combustible:</strong> 18M barriles.</li><li><strong>Componentes elec:</strong> 8.5M unidades.</li><li><strong>Maquinaria:</strong> 2,200 unidades.</li></ul></div><a href="#registro" class="btn btn-primary btn-block">Agendar Cita</a></div></div></div>
+
+    <script>
+        const form = document.getElementById('form-registro');
+        const modalExito = document.getElementById('modal-exito');
+        const btnVendedor = document.getElementById('btn-acceso-vendedor');
+        const btnJurado = document.getElementById('btn-acceso-jurado');
+
+        function cerrarModalExito() {
+            modalExito.style.visibility = 'hidden';
+            modalExito.style.opacity = '0';
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const rolSeleccionado = document.getElementById('interes').value;
+            const btn = form.querySelector('.btn-submit');
+            const originalText = btn.innerText;
+            
+            btn.innerText = "Procesando..."; 
+            btn.disabled = true;
+
+            const data = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset(); 
+                    
+                    // LÓGICA DE MOSTRAR BOTONES SEGÚN ROL
+                    btnVendedor.style.display = 'none';
+                    btnJurado.style.display = 'none';
+
+                    if (rolSeleccionado === 'vendedor') {
+                        btnVendedor.style.display = 'block';
+                    } else if (rolSeleccionado === 'jurado') {
+                        btnJurado.style.display = 'block';
+                    }
+                    // Si es visitante, no se muestra ninguno
+
+                    modalExito.style.visibility = 'visible';
+                    modalExito.style.opacity = '1';
+                } else {
+                    alert("Error al registrar.");
+                }
+            }).catch(error => {
+                alert("Error de conexión.");
+            }).finally(() => {
+                btn.innerText = originalText;
+                btn.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
